@@ -11,6 +11,8 @@ module testFullAdder();
 
 
     initial begin
+    $dumpfile("adder_waves.vcd");
+    $dumpvars();
     $display("a    b    cin Ecout Esum  cout sum");
     a=0;b=0;carryin=0; #1000
     $display("%b    %b    %b    0    0    %b    %b", a, b, carryin, carryout, sum);
@@ -28,5 +30,6 @@ module testFullAdder();
     $display("%b    %b    %b    1    0    %b    %b", a, b, carryin, carryout, sum);
     a=1;b=1;carryin=1; #1000
     $display("%b    %b    %b    1    1    %b    %b", a, b, carryin, carryout, sum);
+    $finish();
 	end
 endmodule
